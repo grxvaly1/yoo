@@ -1,0 +1,292 @@
+.App {
+  text-align: center;
+  background: linear-gradient(-45deg, 
+    #0f0c29 0%, 
+    #1c103f 13%, 
+    #2d1155 25%, 
+    #431366 38%, 
+    #5d146f 50%, 
+    #791571 62%, 
+    #91176b 75%, 
+    #a61b60 87%, 
+    #b82052 100%
+  );
+  background-size: 400% 400%;
+  animation: animateGradient 7.5s ease-in-out infinite;
+  
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Poppins', -apple-system, sans-serif;
+}
+
+@keyframes animateGradient {
+  0%   { background-position: 0 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+#confetti-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 20; }
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 10;
+  width: 100%;
+}
+
+.cake { width: 35vw; max-width: 400px; min-width: 200px; position: relative; z-index: 10; flex-shrink: 0; }
+
+.cake-text {
+  color: rgba(255, 255, 255, 0);
+  font-size: calc(18px + 2vmin);
+  position: relative;
+  z-index: 10;
+  letter-spacing: 0.05em;
+  transition: color 2s ease;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.cake-text.visible { color: rgba(255, 255, 255, 0.9); stroke: black; stroke-width: 2px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); }
+
+.roses-top {
+  position: relative;
+  z-index: 10;
+  flex-shrink: 0;
+  width: 150px;
+  height: 350px;
+  transform: scale(0.65); 
+  transform-origin: bottom center;
+}
+
+.ribbon-assembly {
+  position: absolute;
+  bottom: 120px; 
+  left: 45%;
+  transform: translateX(-50%) scale(1.6); 
+  z-index: 6; 
+  width: 80px;
+  height: 30px;
+}
+
+.ribbon-knot {
+  position: absolute;
+  top: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18px;
+  height: 18px;
+  background-color: #e62e5c; 
+  border-radius: 4px;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.ribbon-loops {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.ribbon-loops:before, .ribbon-loops:after {
+  content: '';
+  position: absolute;
+  width: 45px;
+  height: 30px;
+  background: radial-gradient(ellipse at center, #f0507a 0%, #b81b43 100%); 
+  border-radius: 30px / 20px; 
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.ribbon-loops:before {
+  left: 0;
+  transform: skewX(-10deg);
+}
+
+.ribbon-loops:after {
+  right: 0;
+  transform: skewX(10deg);
+}
+
+.rose-wrapper {
+  width: 100px;
+  height: 500px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -50px;
+  transform-origin: 44px calc(100% - 80px); 
+  transition: all 0.5s ease;
+}
+
+.rose-wrapper:nth-child(1) {
+  transform: scale(1) translateY(0px) rotate(0deg);
+  z-index: 5;
+}
+
+.rose-wrapper:nth-child(2) {
+  transform: scale(0.95) rotate(-15deg);
+  z-index: 3;
+}
+
+.rose-wrapper:nth-child(3) {
+  transform: scale(0.95) rotate(15deg);
+  z-index: 2;
+}
+
+.rose-inner-animator {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-origin: bottom center;
+  animation: swayingIndividual 7s ease-in-out infinite;
+}
+
+.rose-wrapper:nth-child(1) .rose-inner-animator { animation-delay: 0s;   }
+.rose-wrapper:nth-child(2) .rose-inner-animator { animation-delay: -1s; }
+.rose-wrapper:nth-child(3) .rose-inner-animator { animation-delay: -2s; }
+
+@keyframes swayingIndividual {
+  0%, 100% { transform: rotate(-0.5deg) scaleY(1); }
+  50%       { transform: rotate(0.5deg) scaleY(0.99); }
+}
+
+.rose-inner-animator div { position: absolute; }
+.rose-wrapper .rose-leaves > div:first-child { background: #066406; border: none; border-radius: 4px; left: 40px; top: 80px; width: 8px; z-index: 1; height: 310px;}
+.rose-wrapper .rose-leaves > div:nth-child(2) { background: #28722c; border-radius: 100px; height: 30px; left: 15px; position: absolute; top: 60px; width: 55px; z-index: 5; }
+.rose-wrapper .stem-leaf { background: #28722c; border-radius: 0 70% 0 70%; box-shadow: 1px 1px 3px rgba(0,0,0,0.3); height: 20px; left: 45px; position: absolute; top: 180px; transform: rotate(-20deg); width: 35px; z-index: 4; }
+.rose-wrapper .thorns > div { background: #066406; clip-path: polygon(0 50%, 100% 0, 100% 100%); height: 15px; position: absolute; width: 15px; z-index: 2; }
+.rose-wrapper .thorns > div:first-child { left: 25px; top: 120px; transform: rotate(0deg); }
+.rose-wrapper .thorns > div:nth-child(2) { left: 48px; top: 160px; transform: rotate(180deg); }
+.rose-wrapper .thorns > div:nth-child(3) { left: 25px; top: 200px; transform: rotate(0deg); }
+.rose-wrapper .thorns > div:nth-child(4) { left: 48px; top: 250px; transform: rotate(180deg); }
+.rose-wrapper .rose-petals > div { background: #d52d58; height: 80px; position: absolute; transition: all 0.5s ease-out; width: 45px; z-index: 10; }
+.rose-wrapper .rose-petals > div:first-child { background: #d52d58; border-radius: 15px; left: 20px; top: -6px; }
+.rose-wrapper .rose-petals > div:nth-child(2), .rose-wrapper .rose-petals > div:nth-child(4), .rose-wrapper .rose-petals > div:nth-child(6) { background: #b81b43; border-radius: 0 30px 0 30px; left: 0; transform-origin: bottom right; }
+.rose-wrapper .rose-petals > div:nth-child(3), .rose-wrapper .rose-petals > div:nth-child(5), .rose-wrapper .rose-petals > div:nth-child(7) { border-radius: 30px 0 30px 0; left: 40px; transform-origin: bottom left; }
+.rose-wrapper .rose-petals > div:nth-child(2) { background: #9e183a; height: 70px; left: 5px; top: 10px; transform: rotate(-5deg); z-index: 15; }
+.rose-wrapper .rose-petals > div:nth-child(3) { animation: openRose3 3s ease-in-out forwards; animation-delay: 2s; background: #9e183a; height: 70px; top: 10px; z-index: 14; }
+.rose-wrapper .rose-petals > div:nth-child(4) { animation: openRose4 3s ease-in-out forwards; animation-delay: 2s; background: #b81b43; height: 75px; top: 5px; z-index: 13; }
+.rose-wrapper .rose-petals > div:nth-child(5) { animation: openRose5 3s ease-in-out forwards; animation-delay: 2s; background: #b81b43; height: 75px; top: 5px; z-index: 12; }
+.rose-wrapper .rose-petals > div:nth-child(6) { animation: openRose6 3s ease-in-out forwards; animation-delay: 2s; background: #c9204b; height: 75px; top: 5px; z-index: 11; }
+.rose-wrapper .rose-petals > div:nth-child(7) { animation: openRose7 3s ease-in-out forwards; animation-delay: 2s; background: #c9204b; height: 75px; top: 5px; z-index: 10; }
+.rose-wrapper .sparkles { bottom: 210px; position: absolute; width: 100%; }
+.rose-wrapper .sparkles > div { animation: sparkle 4s ease-in-out infinite; background: #ff96c0; border-radius: 100px; bottom: 0; box-shadow: 0 0 12px 2px #ff4e85; height: 4px; opacity: 0; position: absolute; width: 4px; }
+.rose-wrapper .sparkles > div:first-child { animation-delay: 3s; left: 60px; }
+.rose-wrapper .sparkles > div:nth-child(2) { animation-delay: 2s; left: 158px; }
+.rose-wrapper .sparkles > div:nth-child(3) { animation-delay: 1s; left: -22px; }
+.rose-wrapper .sparkles > div:nth-child(4) { animation-delay: 1s; left: 10px; }
+.rose-wrapper .sparkles > div:nth-child(5) { animation-delay: 3s; left: 177px; }
+.rose-wrapper .sparkles > div:nth-child(6) { animation-delay: 2s; left: -82px; }
+.rose-wrapper .sparkles > div:nth-child(7) { animation-delay: 3s; left: 45px; }
+.rose-wrapper .sparkles > div:nth-child(8) { animation-delay: 3s; left: 74px; }
+.rose-wrapper .sparkles > div:nth-child(9) { animation-delay: 2s; left: -79px; }
+
+@keyframes sparkle { 50% { opacity: 1; } 100% { bottom: 250px; } }
+@keyframes openRose3 { 100% { transform: rotate(50deg); } }
+@keyframes openRose4 { 100% { transform: rotate(-20deg); } }
+@keyframes openRose5 { 100% { transform: rotate(20deg); } }
+@keyframes openRose6 { 100% { transform: rotate(-5deg); } }
+@keyframes openRose7 { 100% { transform: rotate(5deg); } }
+
+.App h1 { 
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  font-size: 27px;
+  position: relative; 
+  z-index: 10; 
+  letter-spacing: 0.1em; 
+  cursor: pointer; 
+  transition: transform 0.2s ease; 
+}
+
+.App h1:hover {
+  transform: scale(1.05);
+}
+
+.App p { font-size: calc(10px + 1vmin); z-index: 10; }
+.bottom-text { position: fixed !important; bottom: 24px; left: 0; right: 0; text-align: center; color: rgba(255, 255, 255, 0.15); font-size: calc(8px + 0.8vmin); letter-spacing: 0.1em; z-index: 10; margin: 0; }
+.loading-container { display: flex; flex-direction: column; align-items: center; gap: 16px; z-index: 10; position: relative; }
+.loading-bar { width: 200px; height: 15px; background: rgba(255, 255, 255, 0.1); border-radius: 2px; overflow: hidden; }
+.loading-fill { height: 100%; background: rgba(255, 255, 255, 0.6); border-radius: 2px; animation: fill 8s ease-in-out forwards; }
+.loading-text { color: rgba(255, 255, 255, 0.8); font-size: calc(8px + 0.8vmin); letter-spacing: 0.2em; position: relative !important; }
+
+@keyframes fill { 0% { width: 0%; } 60% { width: 75%; } 80% { width: 82%; } 93% { width: 83%; } 100% { width: 100%; } }
+
+@media (max-width: 768px) {
+  .cake { width: 70vw; max-width: 300px; }
+  .roses-top { 
+    transform: scale(0.5); 
+    height: 300px; 
+    width: 120px;
+    margin-bottom: 0px;
+  }
+}
+
+.rose-wrapper .rose-petals > div {
+  border: 1.5px solid #4a0418; 
+  box-sizing: border-box;
+}
+
+.rose-wrapper .rose-leaves > div,
+.rose-wrapper .stem-leaf {
+  border: 1.5px solid #022b02; 
+  box-sizing: border-box;
+}
+
+.ribbon-knot,
+.ribbon-loops:before, 
+.ribbon-loops:after {
+  border: 1.5px solid #7a0c27;
+  box-sizing: border-box;
+}
+
+#flame_left {
+  transform-origin: 296px 175px;
+  animation: flicker 1.4s ease-in-out infinite;
+}
+
+#flame_center {
+  transform-origin: 341px 175px;
+  animation: flicker 1.5s ease-in-out infinite;
+  animation-delay: 0.2s;
+}
+
+#flame_right {
+  transform-origin: 386px 175px;
+  animation: flicker 1.6s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes flicker { 
+  0% { transform: rotate(0deg) scaleX(1); } 
+  25% { transform: rotate(-4deg) scaleX(0.85); } 
+  50% { transform: rotate(3deg) scaleX(1.1); } 
+  75% { transform: rotate(-3deg) scaleX(0.9); } 
+  100% { transform: rotate(0deg) scaleX(1); } 
+}
+
+.loading-gif {
+  width: 150px;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  animation: pulseImage 2s ease-in-out infinite;
+}
+
+@keyframes pulseImage {
+  0%   { transform: scale(1); opacity: 0.8; }
+  50%  { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}

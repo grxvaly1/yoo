@@ -1,0 +1,80 @@
+<svg width="100%" viewBox="0 0 680 500" xmlns="http://www.w3.org/2000/svg">
+
+  <ellipse cx="340" cy="450" rx="190" ry="26" fill="#b0b8c0"/>
+  <rect x="150" y="436" width="380" height="18" rx="3" fill="#c8d0d8"/>
+  <ellipse cx="340" cy="436" rx="190" ry="18" fill="#d8e0e8"/>
+
+  <rect x="180" y="380" width="320" height="50" rx="4" fill="#451f00"/>
+  <ellipse cx="340" cy="380" rx="160" ry="16" fill="#3d1c00"/>
+  <ellipse cx="340" cy="430" rx="160" ry="16" fill="#4e2300"/>
+
+  <rect x="180" y="368" width="320" height="16" rx="2" fill="#f0ddb0"/>
+  <ellipse cx="340" cy="368" rx="160" ry="11" fill="#fdf3e0"/>
+  <ellipse cx="340" cy="384" rx="160" ry="11" fill="#e0cc96"/>
+
+  <rect x="180" y="318" width="320" height="50" rx="4" fill="#4e2300"/>
+  <ellipse cx="340" cy="318" rx="160" ry="16" fill="#3d1c00"/>
+  <ellipse cx="340" cy="368" rx="160" ry="16" fill="#451f00"/>
+
+  <rect x="180" y="306" width="320" height="16" rx="2" fill="#f0ddb0"/>
+  <ellipse cx="340" cy="306" rx="160" ry="11" fill="#fdf3e0"/>
+  <ellipse cx="340" cy="322" rx="160" ry="11" fill="#e0cc96"/>
+
+  <rect x="180" y="256" width="320" height="50" rx="4" fill="#4e2300"/>
+  <ellipse cx="340" cy="256" rx="160" ry="16" fill="#3d1c00"/>
+  <ellipse cx="340" cy="306" rx="160" ry="16" fill="#451f00"/>
+
+  <ellipse cx="340" cy="254" rx="160" ry="16" fill="#fdf3e0"/>
+
+  <ellipse cx="183" cy="263" rx="7" ry="10" fill="#fdf3e0"/>
+  <ellipse cx="200" cy="268" rx="9" ry="14" fill="#fdf3e0"/>
+  <ellipse cx="222" cy="272" rx="8" ry="12" fill="#fdf3e0"/>
+  <ellipse cx="244" cy="270" rx="9" ry="16" fill="#fdf3e0"/>
+  <ellipse cx="266" cy="266" rx="8" ry="11" fill="#fdf3e0"/>
+  <ellipse cx="288" cy="271" rx="9" ry="15" fill="#fdf3e0"/>
+  <ellipse cx="310" cy="267" rx="8" ry="12" fill="#fdf3e0"/>
+  <ellipse cx="332" cy="272" rx="9" ry="16" fill="#fdf3e0"/>
+  <ellipse cx="354" cy="268" rx="8" ry="13" fill="#fdf3e0"/>
+  <ellipse cx="376" cy="273" rx="9" ry="15" fill="#fdf3e0"/>
+  <ellipse cx="398" cy="267" rx="8" ry="11" fill="#fdf3e0"/>
+  <ellipse cx="420" cy="271" rx="9" ry="14" fill="#fdf3e0"/>
+  <ellipse cx="442" cy="268" rx="8" ry="12" fill="#fdf3e0"/>
+  <ellipse cx="464" cy="272" rx="9" ry="16" fill="#fdf3e0"/>
+  <ellipse cx="484" cy="267" rx="8" ry="11" fill="#fdf3e0"/>
+  <ellipse cx="497" cy="263" rx="7" ry="10" fill="#fdf3e0"/>
+  <ellipse cx="340" cy="254" rx="160" ry="16" fill="#fdf3e0"/>
+
+  <rect x="290" y="186" width="12" height="68" rx="5" fill="#e8609a"/>
+  <rect x="292" y="186" width="4" height="68" rx="2" fill="#f090bb" opacity="0.5"/>
+  <ellipse cx="296" cy="186" rx="6" ry="7" fill="#cc3366"/>
+
+  <rect x="335" y="186" width="12" height="68" rx="5" fill="#e8609a"/>
+  <rect x="337" y="186" width="4" height="68" rx="2" fill="#f090bb" opacity="0.5"/>
+  <ellipse cx="341" cy="186" rx="6" ry="7" fill="#cc3366"/>
+
+  <rect x="380" y="186" width="12" height="68" rx="5" fill="#e8609a"/>
+  <rect x="382" y="186" width="4" height="68" rx="2" fill="#f090bb" opacity="0.5"/>
+  <ellipse cx="386" cy="186" rx="6" ry="7" fill="#cc3366"/>
+
+  <g id="flame_left">
+    <ellipse cx="296" cy="163" rx="14" ry="20" fill="#ff8c00" opacity="0.15"/>
+    <ellipse cx="296" cy="168" rx="6" ry="13" fill="#ff8c00" opacity="0.9"/>
+    <ellipse cx="296" cy="161" rx="4" ry="8" fill="#ffdd00"/>
+    <ellipse cx="296" cy="157" rx="2" ry="5" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <g id="flame_center">
+    <ellipse cx="341" cy="163" rx="14" ry="20" fill="#ff8c00" opacity="0.15"/>
+    <ellipse cx="341" cy="168" rx="6" ry="13" fill="#ff8c00" opacity="0.9"/>
+    <ellipse cx="341" cy="161" rx="4" ry="8" fill="#ffdd00"/>
+    <ellipse cx="341" cy="157" rx="2" ry="5" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <g id="flame_right">
+    <ellipse cx="386" cy="163" rx="14" ry="20" fill="#ff8c00" opacity="0.15"/>
+    <ellipse cx="386" cy="168" rx="6" ry="13" fill="#ff8c00" opacity="0.9"/>
+    <ellipse cx="386" cy="161" rx="4" ry="8" fill="#ffdd00"/>
+    <ellipse cx="386" cy="157" rx="2" ry="5" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+</svg>
