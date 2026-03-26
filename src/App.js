@@ -115,7 +115,7 @@ function App() {
           <Ribbon />
         </div>
 
-        <h2 className={`cake-text ${showText ? 'visible' : ''}`} onClick={daConfetii}>Happy Birthday!!! 🥳🫶🏻</h2>
+        <h2 className={`cake-text ${showText ? 'visible' : ''}`} onClick={daConfetii}>La Multi Ani, Ana!!! 🥳🫶🏻</h2>
         
         <div className="main-content">
           <Cake className="cake" />
